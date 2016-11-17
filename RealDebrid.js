@@ -12,7 +12,11 @@
 // @connect-src    real-debrid.com
 // ==/UserScript==
 'use strict';
+
+
 var t = 'APIKEYYY';
+
+
 var re = RegExp('\\b(' + [
 '1fichier\\.com/',
 'streamin\\.to/',
