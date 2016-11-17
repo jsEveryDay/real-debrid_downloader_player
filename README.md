@@ -1,4 +1,5 @@
- **1 Click Download Starter or Video Play**
+**1 Click Download Starter or Video Play**
+------------------------------------------
 
 What does this do?
 
