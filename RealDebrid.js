@@ -81,7 +81,9 @@ var s = {
     if (t) h['Authorization'] = 'Bearer ' + t;
     return h;
   },
-  magnet: 'http://www.real-debrid.com/torrents',
+  magnet:'https://api.real-debrid.com/rest/1.0/torrents/addMagnet',
+  magpost: 'magnet=%s',
+  magview: 'https://real-debrid.com/torrents',
   api: function (s) {
     return 'https://api.real-debrid.com/rest/1.0/unrestrict/link';
   },
@@ -228,12 +230,25 @@ function onWebClick(e) {
 }
 function onMagnetClick(e) {
   e.stopPropagation();
-  if (e.which != 1) return;
-  var urls = (GM_getValue('magnet') || s.magnet || '').split('|'),
-  param = encodeURIComponent(this.previousSibling.href);
-  for (var i = urls.length, url; i-- && (url = urls[i].trim()); ) {
-    GM_openInTab(url.indexOf('%s') > - 1 ? url.replace('%s', param)  : url + '#' + param);
-  }
+  if(e.which != 1) return;
+  var selctedMag = this;
+  GM_xmlhttpRequest({
+      url: s.magnet,
+      method: "POST",
+      headers: { "Authorization" : "Bearer " + t },
+      data: s.magpost ? s.magpost.replace('%s', encodeURIComponent(this.previousSibling.href)) : null,
+      onload: function(res) {
+        if (res.status != 201){
+          selctedMag.className = 'adh-link adh-error';
+        }
+        else {
+          console.log(res.responseText);
+          selctedMag.className = 'adh-link adh-download';
+          GM_openInTab(s.magview);
+        }
+      }
+    });
+  
 }
 function unlock(a, start, copy, mh) {
   a.className = 'adh-link adh-busy';
