@@ -20,6 +20,7 @@ var t = 'APIKEYYY';
 var re = RegExp('\\b(' + [
 '1fichier\\.com/',
 'streamin\\.to/',
+'dropapk\\.to/',
 '[24]shared\\.com\\/file',
 '(keep2s(hare)?|k2s)\\.cc/file/',
 '(rapidgator\\.net|rg\\.to)/file',
