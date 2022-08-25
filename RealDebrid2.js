@@ -2,6 +2,7 @@
 // @name           Real-Debrid2
 // @author         Me
 // @include        http://*
+// @include        https://*
 // @grant          GM_registerMenuCommand
 // @grant          GM_openInTab
 // @grant          GM_setValue
