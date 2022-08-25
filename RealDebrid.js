@@ -2,6 +2,7 @@
 // @name           Real-Debrid
 // @author         Me
 // @include        http://*
+// @include        https://*
 // @grant          GM_registerMenuCommand
 // @grant          GM_openInTab
 // @grant          GM_setValue
@@ -21,8 +22,6 @@ var re = RegExp('\\b(' + [
 '1fichier\\.com/',
 'streamin\\.to/',
 'dropapk\\.to/',
-'rarbg\\.to/',
-'1337x\\.to/',
 '[24]shared\\.com\\/file',
 '(keep2s(hare)?|k2s)\\.cc/file/',
 '(rapidgator\\.net|rg\\.to)/file',
