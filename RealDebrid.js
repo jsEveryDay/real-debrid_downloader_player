@@ -21,6 +21,8 @@ var re = RegExp('\\b(' + [
 '1fichier\\.com/',
 'streamin\\.to/',
 'dropapk\\.to/',
+'rarbg\\.to/',
+'1337x\\.to/',
 '[24]shared\\.com\\/file',
 '(keep2s(hare)?|k2s)\\.cc/file/',
 '(rapidgator\\.net|rg\\.to)/file',
